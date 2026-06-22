@@ -22,3 +22,11 @@ team-db "INSERT INTO friendships (user_id, friend_id, status) VALUES (2, 3, 'pen
 # Seed Achievements
 team-db "INSERT INTO achievements (user_id, achievement_key) VALUES (1, 'first_game');"
 team-db "INSERT INTO achievements (user_id, achievement_key) VALUES (3, 'high_scorer');"
+
+# Seed Tournaments
+team-db "INSERT OR IGNORE INTO tournaments (game_id, title, description, entry_fee_coins, prize_pool_coins, starts_at, ends_at, status) VALUES (1, 'Gem Crush Weekend', 'Weekly gem crush tournament', 100, 5000, '2026-06-26 00:00:00', '2026-06-28 23:59:59', 'upcoming');"
+team-db "INSERT OR IGNORE INTO tournaments (game_id, title, description, entry_fee_coins, prize_pool_coins, starts_at, ends_at, status) VALUES (2, 'Space Master Blitz', 'Fast-paced space blaster competition', 0, 1000, '2026-06-22 00:00:00', '2026-06-22 23:59:59', 'active');"
+
+# Seed Tournament Entries
+team-db "INSERT INTO tournament_entries (tournament_id, user_id, score) VALUES (2, 1, 1200);"
+team-db "INSERT INTO tournament_entries (tournament_id, user_id, score) VALUES (2, 2, 1800);"
